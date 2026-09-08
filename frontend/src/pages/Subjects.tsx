@@ -13,7 +13,8 @@ function Subjects() {
     'CE',
   ]
 
-  const subjects = branchSubjects[selectedBranch as keyof typeof branchSubjects]
+  const subjects =
+    branchSubjects[selectedBranch as keyof typeof branchSubjects]
 
   return (
     <main className="subjects-page">
@@ -35,7 +36,11 @@ function Subjects() {
           {branches.map((branch) => (
             <button
               key={branch}
-              className={selectedBranch === branch ? 'branch-button active' : 'branch-button'}
+              className={
+                selectedBranch === branch
+                  ? 'branch-button active'
+                  : 'branch-button'
+              }
               onClick={() => setSelectedBranch(branch)}
             >
               {branch}
@@ -53,9 +58,9 @@ function Subjects() {
 
             <h2>{subject}</h2>
 
-           <Link to={`/subjects/${encodeURIComponent(subject)}`}>
-  View Subject
-</Link>
+            <Link to={`/subjects/${encodeURIComponent(subject)}`}>
+              View Subject
+            </Link>
           </div>
         ))}
       </section>
